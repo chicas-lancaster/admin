@@ -1,0 +1,52 @@
+\documentclass{beamer}
+
+
+\setbeamertemplate{navigation symbols}{} %gets rid of navigation symbols
+
+\setbeamertemplate{footline}{ %use this to get page nicer page number
+\hspace{2mm} \scriptsize{\insertframenumber{}}
+\vspace{2mm}
+}
+
+\setbeamertemplate{itemize items}[circle] %round bullet points
+
+% title page with chicas and uni logos
+\titlegraphic{\includegraphics[height=2cm]{clogo1.png} \hspace{2mm} \includegraphics[height=1.5cm]{bg-logo.png}}
+
+% title page with chias, uni, and campy project logos
+%\titlegraphic{\includegraphics[height=2cm]{clogo1.png} \hspace{2mm} \includegraphics[height=1.5cm]{bg-logo.png} \hspace{2mm} \includegraphics[height=1.5cm]{enigma.png}}
+
+% uni logo for bottom left of every page
+\logo{\vspace{-6mm}\includegraphics[height=1 cm]{bg-logo.png}\hspace{1mm}}
+
+
+\title{Title}
+\author{People}
+\date{Date}
+
+\begin{document}
+
+{
+\setbeamertemplate{logo}{}
+\setbeamertemplate{footline}{}
+\begin{frame}
+\maketitle
+\end{frame}
+}
+
+
+\begin{frame}{Outline}
+\begin{itemize}
+\item first
+\item second
+\item third
+\end{itemize}
+\end{frame}
+
+
+
+
+
+
+
+\end{document}
