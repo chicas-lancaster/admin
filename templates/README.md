@@ -1,6 +1,9 @@
 Templates
 =========
 
-Jumping-off points for LaTeX, Libre/OpenOffice and MS Office Presentations.
+Jumping-off points for LaTeX, Libre/OpenOffice and MS Office Presentations. 
+Currently the MS Office template is untested.
+
+
 
 
