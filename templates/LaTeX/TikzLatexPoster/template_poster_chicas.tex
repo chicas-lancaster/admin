@@ -1,0 +1,127 @@
+\documentclass[25pt,a1poster]{tikzposter}
+\usetheme{Board}
+\usebackgroundstyle{VerticalGradation}
+
+\usepackage{amsthm,amsmath}
+%\usepackage{natbib}
+\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex}
+\addbibresource{template.bib}
+
+\usepackage{authblk}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\title{\parbox{\linewidth}{\centering Studying Vector-Borne Spatio-Temporal Diseases with Genomic Data}}
+\author[1]{A. Postdoc}
+\author[1]{A. Student}
+\author[2]{A. Collaborator}
+\author[1]{P. Investigator}
+\affil[1]{CHICAS, Lancaster Medical School, Lancaster University}
+\affil[2]{Department of Inadvisably Applied Magic, Unseen University, Ankh-Morpork}
+
+\renewcommand\Authfont{\fontsize{36}{14.4}\selectfont}
+\renewcommand\Affilfont{\fontsize{28}{10.8}\itshape}
+
+\makeatletter
+\newcommand\insertlogoi[2][]{\def\@insertlogoi{\includegraphics[#1]{#2}}}
+\newcommand\insertlogoii[2][]{\def\@insertlogoii{\includegraphics[#1]{#2}}}
+\newlength\LogoSep
+\setlength\LogoSep{0pt}
+
+\insertlogoi[width=7cm]{chicas_logo.pdf}
+\insertlogoii[width=7cm]{chicas_logo.pdf}
+
+
+\renewcommand\maketitle[1][]{  % #1 keys
+    \normalsize
+    \setkeys{title}{#1}
+    % Title dummy to get title height
+    \node[transparent,inner sep=\TP@titleinnersep, line width=\TP@titlelinewidth, anchor=north, minimum width=\TP@visibletextwidth-2\TP@titleinnersep]
+        (TP@title) at ($(0, 0.5\textheight-\TP@titletotopverticalspace)$) {\parbox{\TP@titlewidth-2\TP@titleinnersep}{\TP@maketitle}};
+    \draw let \p1 = ($(TP@title.north)-(TP@title.south)$) in node {
+        \setlength{\TP@titleheight}{\y1}
+        \setlength{\titleheight}{\y1}
+        \global\TP@titleheight=\TP@titleheight
+        \global\titleheight=\titleheight
+    };
+
+    % Compute title position
+    \setlength{\titleposleft}{-0.5\titlewidth}
+    \setlength{\titleposright}{\titleposleft+\titlewidth}
+    \setlength{\titlepostop}{0.5\textheight-\TP@titletotopverticalspace}
+    \setlength{\titleposbottom}{\titlepostop-\titleheight}
+
+    % Title style (background)
+    \TP@titlestyle
+
+    % Title node
+    \node[inner sep=\TP@titleinnersep, line width=\TP@titlelinewidth, anchor=north, minimum width=\TP@visibletextwidth-2\TP@titleinnersep]
+        at (0,0.5\textheight-\TP@titletotopverticalspace)
+        (title)
+        {\parbox{\TP@titlewidth-2\TP@titleinnersep}{\TP@maketitle}};
+
+    \node[inner sep=0pt,anchor=west]
+      at ([xshift=-\LogoSep]title.west)
+      {\@insertlogoi};
+
+    \node[inner sep=0pt,anchor=east]
+      at ([xshift=\LogoSep]title.east)
+      {\@insertlogoii};
+
+    % Settings for blocks
+    \normalsize
+    \setlength{\TP@blocktop}{\titleposbottom-\TP@titletoblockverticalspace}
+}
+\makeatother
+
+%\makeatletter
+%\def\maketitle{\AB@maketitle}
+%\makeatother
+
+\begin{document}
+
+\maketitle[titletoblockverticalspace=-5pt,titletextscale=0.75]
+
+\begin{columns}
+\column{0.5}
+\block{Motivation}{
+Lorem ipsum dolor sit amet, mazim veniam sea no, vim ne noster malorum, elitr viderer et pro. Ad amet patrioque eam. Ex vix ferri voluptua senserit, vis an wisi percipitur. Eam ex vero deleniti. Omnes convenire vel eu, tempor gloriatur definiebas his in \citep{pratchett_03}.
+
+An eos mazim nullam meliore, sed an recusabo mediocritatem, simul quaerendum nam at. Duo ea everti noluisse concludaturque, salutatus assueverit an vix. Te assentior adolescens ius. Ei sit facer verear. Ignota convenire voluptatibus cum at, facer vivendo explicari ad mea, sale timeam an nec.
+}
+
+\block{Mathematical Model}{
+
+Habemus molestiae eu duo, ex nec errem nonumy possim. Ex intellegat constituam omittantur vis. Possit accusata disputando in vel, hinc liber ex duo, mei eius liber legere id. Brute aperiri delicatissimi ius at, enim pertinax ex mei, latine vituperata ex mel. Eum ne facer tollit appellantur, no malorum delectus intellegat vix.
+
+In exerci semper nec. Vim debet impedit ea. Sit et fugit lobortis convenire, vis eu admodum deleniti patrioque, soleat forensibus in sed. Mea viris conceptam ad, est te debitis nostrum. Id quod dolorum vel, ei feugait tacimates est, an verterem persecuti ius.
+
+\begin{equation}
+ \hat{B} = \argmin_{B} \sum_k |y_k - X_k \beta_k|^2_2 + \lambda |\beta_k|_1 + \gamma \sum_{k'>k}^{K} \tau_{k,k'} |\beta_k - \beta_{k'}|_1
+\end{equation}
+}
+
+\block{Simulation Study}{Illum liber an nam, mei te bonorum blandit persecuti, no vix dicat habemus. Eos at possim blandit assentior, mel quidam senserit ocurreret id. Omnis deserunt cum in. Est ei erant quodsi aliquam. Omnes meliore no sed.
+}
+
+\column{0.5}
+
+\block{Application}{
+
+Lorem ipsum dolor sit amet, mazim veniam sea no, vim ne noster malorum, elitr viderer et pro. Ad amet patrioque eam. Ex vix ferri voluptua senserit, vis an wisi percipitur. Eam ex vero deleniti. Omnes convenire vel eu, tempor gloriatur definiebas his in.
+
+\begin{tikzfigure}[Flu modelling example]
+  \includegraphics[width=0.2\textwidth]{colds.pdf}
+\end{tikzfigure}
+
+}
+
+\block{Conclusion and References}{
+An eos mazim nullam meliore, sed an recusabo mediocritatem, simul quaerendum nam at. Duo ea everti noluisse concludaturque, salutatus assueverit an vix. Te assentior adolescens ius. Ei sit facer verear. Ignota convenire voluptatibus cum at, facer vivendo explicari ad mea, sale timeam an nec.
+
+
+\printbibliography[heading=none]
+}
+\end{columns}
+
+\end{document} 
